@@ -1,6 +1,6 @@
 # Fatigue-sensitivity Comparison of sEMG and A-mode Ultrasound based Hand Gesture Recognition
 
-This is an official pytorch implementation of [Fatigue-sensitivity Comparison of sEMG and A-mode Ultrasound based Hand Gesture Recognition (to be published)]()
+This is an official pytorch implementation of [Fatigue-sensitivity Comparison of sEMG and A-mode Ultrasound based Hand Gesture Recognition](https://ieeexplore.ieee.org/document/9585400)
 
 ## Environment
 The code is developed using python 3.7 on Ubuntu 20.04. NVIDIA GPU is needed.
@@ -11,7 +11,7 @@ The complete hybrid sEMG/AUS dataset is not released now. We apply collected sEM
 (code: pyc4).
 * [Google Drive]()
 
-Create a folder named by "dataset". Download the dataset from the links and place it in this folder. Then following the instruction from the repo [USEMG-feature-extraction](https://github.com/increase24/USEMG-feature-extraction) to extract the features of sEMG and AUS signal. The extracted features will be saved to a folder named `"featureset"` (automatically create if not exits).
+Create a folder named by `"dataset"`. Download the dataset from the links and place it in this folder. Then following the instruction from the repo [USEMG-feature-extraction](https://github.com/increase24/USEMG-feature-extraction) to extract the features of sEMG and AUS signal. The extracted features will be saved to a folder named `"featureset"` (automatically create if not exits).
 
 Your directory tree should look like this: 
 ```
