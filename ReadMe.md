@@ -1,6 +1,6 @@
 # Fatigue-sensitivity Comparison of sEMG and A-mode Ultrasound based Hand Gesture Recognition
 
-This is an official pytorch implementation of [Fatigue-sensitivity Comparison of sEMG and A-mode Ultrasound based Hand Gesture Recognition](https://ieeexplore.ieee.org/document/9585400)
+This is an official implementation of [Fatigue-sensitivity Comparison of sEMG and A-mode Ultrasound based Hand Gesture Recognition](https://ieeexplore.ieee.org/document/9585400).
 
 ## Environment
 The code is developed using python 3.7 on Ubuntu 20.04. NVIDIA GPU is needed.
@@ -70,6 +70,15 @@ ${ROOT}/featureset
 ## Citation
 If you find this repository useful for your research, please cite with:
 ```
+@ARTICLE{Zeng2021Fatigue,
+  author={Zeng, Jia and Zhou, Yu and Yang, Yicheng and Yan, Jipeng and Liu, Honghai},
+  journal={IEEE Journal of Biomedical and Health Informatics}, 
+  title={Fatigue-sensitivity Comparison of sEMG and A-mode Ultrasound based Hand Gesture Recognition}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/JBHI.2021.3122277}}
 ```
 
 ## Contact
