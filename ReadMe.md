@@ -2,8 +2,12 @@
 
 This is an official implementation of [Fatigue-sensitivity Comparison of sEMG and A-mode Ultrasound based Hand Gesture Recognition](https://ieeexplore.ieee.org/document/9585400).
 
+To do list:
+  * [ ] Machine learning algorithms to classify the gestures
+  * [ ] Quantitative indexes to analyze the feature space
+
 ## Environment
-The code is developed using python 3.7 on Ubuntu 20.04. NVIDIA GPU is needed.
+The code is developed using Matlab 2017b and python 3.7. NVIDIA GPU is needed.
 
 ## Data preparing
 The complete hybrid sEMG/AUS dataset is not released now. We apply collected sEMG/AUS data of one subject for code testing, which can be downloaded from: 
