@@ -68,6 +68,10 @@ ${ROOT}/featureset
    pip install -r requirements.txt
    ```
 ### Training
+train and evaluate LDA classifier
+```
+python ./train/train_lda.py
+```
 
 ## Results
 
