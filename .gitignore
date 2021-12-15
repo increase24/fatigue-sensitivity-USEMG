@@ -6,6 +6,9 @@ outputs/
 # dataset
 data
 *.tar
+# feature set
+featureset
+
 # output files
 *.out
 
@@ -16,6 +19,5 @@ eda
 
 # vscode
 .vscode
+code
 
-# PBS
-PBS
