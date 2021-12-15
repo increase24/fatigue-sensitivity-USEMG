@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import preprocessing
+from utils.cm import confusionMatrix
 
 NUM_CLASS = 8
 start_repetition = 66
@@ -130,4 +131,11 @@ if __name__ == "__main__":
         os.makedirs(os.path.join('results', subjects[index_sub]))
     np.savetxt(os.path.join('results', subjects[index_sub], 'accuracies.txt'), accuracies)
 
+    # compute and save confusion matrix
+    confusionMatrix(labels_test,preds_emg_nf_nf, os.path.join('results', subjects[index_sub],"cm_emg_nf_nf.png"))
+    confusionMatrix(labels_test, preds_us_nf_nf, os.path.join('results', subjects[index_sub],"cm_us_nf_nf.png"))
+    confusionMatrix(labels_test, preds_emg_f_f, os.path.join('results', subjects[index_sub],"cm_emg_f_f.png"))
+    confusionMatrix(labels_test, preds_us_f_f, os.path.join('results', subjects[index_sub],"cm_us_f_f.png"))
+    confusionMatrix(labels_test, preds_emg_nf_f, os.path.join('results', subjects[index_sub],"cm_emg_nf_f.png"))
+    confusionMatrix(labels_test, preds_us_nf_f, os.path.join('results', subjects[index_sub],"cm_us_nf_f.png"))
 
