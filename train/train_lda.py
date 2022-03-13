@@ -39,7 +39,7 @@ def load_data(paths_emg, paths_aus, split_mode=1):
             df_usFeature_F_test = df_usFeature_F.iloc[split_point:len(df_emgFeature_NF),:]
         elif(split_mode==1): #随机分割
             index_all = np.arange(df_emgFeature_NF.shape[0])
-            index_train=np.sort(np.random.choice(df_emgFeature_NF.shape[0],int(df_emgFeature_NF.shape[0]*3/5),replace=False))
+            index_train=np.sort(np.random.choice(df_emgFeature_NF.shape[0],int(df_emgFeature_NF.shape[0]*2/3),replace=False))
             index_test = np.delete(index_all,index_train)
             df_emgFeature_NF_train = df_emgFeature_NF.iloc[index_train,:]
             df_emgFeature_NF_test = df_emgFeature_NF.iloc[index_test,:]
@@ -102,9 +102,9 @@ def evaluate_prediction(emgFeature_train, emgFeature_test, usFeature_train, usFe
 def generate_labels():
     n_class = NUM_CLASS
     labels = np.linspace(0, n_class-1, n_class, endpoint=True, dtype=int)
-    labels_train = np.tile(labels, (int(3/5*(end_repetition-start_repetition)*10),1))
+    labels_train = np.tile(labels, (int(2/3*(end_repetition-start_repetition)*10),1))
     labels_train= labels_train.reshape(-1,1,order = 'F')
-    labels_test = np.tile(labels, (int(2/5*(end_repetition-start_repetition)*10),1))
+    labels_test = np.tile(labels, (int(1/3*(end_repetition-start_repetition)*10),1))
     labels_test= labels_test.reshape(-1,1,order = 'F')
     return labels_train[:,0], labels_test[:,0]
 
@@ -118,12 +118,15 @@ if __name__ == "__main__":
     labels_train, labels_test = generate_labels()
     accuracies = np.zeros((3,2))
     # NF-NF approach 
+    print('NF-NF approach')
     preds_emg_nf_nf, accuracies[0,0], preds_us_nf_nf, accuracies[0,1] = evaluate_prediction(
         df_inputs[0], df_inputs[1], df_inputs[4], df_inputs[5], labels_train, labels_test)
     # F-F approach 
+    print('F-F approach')
     preds_emg_f_f, accuracies[1,0], preds_us_f_f, accuracies[1,1] = evaluate_prediction(
         df_inputs[2], df_inputs[3], df_inputs[6], df_inputs[7], labels_train, labels_test)
     # NF-F approach 
+    print('NF-F approach')
     preds_emg_nf_f, accuracies[2,0], preds_us_nf_f, accuracies[2,1] = evaluate_prediction(
         df_inputs[0], df_inputs[3], df_inputs[4], df_inputs[7], labels_train, labels_test)
     # save accuracies
